@@ -289,10 +289,10 @@ valid_fun () {
 [[ -d /etc/adm-lite ]] && rm -rf /etc/adm-lite
 [[ -d /bin/ejecutar ]] && rm -rf /bin/ejecutar
 mkdir /etc/adm-lite && cd /etc/adm-lite
-echo "cd /etc/adm-lite && ./menu" > /bin/menu
+echo "cd /etc/adm-lite && ./menu" > /bin/99
 echo "cd /etc/adm-lite && ./menu" > /bin/cgh
 echo "cd /etc/adm-lite && ./menu" > /bin/adm
-chmod +x /bin/menu
+chmod +x /bin/99
 chmod +x /bin/cgh
 chmod +x /bin/adm
 mv -f ${SCPinstal}/* /etc/adm-lite/
