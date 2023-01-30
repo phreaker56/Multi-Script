@@ -1,9 +1,9 @@
 #!/bin/bash
 # Si llegaste hasta aqui, No Reproduscas Copias de este ADM
 # ERES ADMIRABLE, al lograr llegar hasta aqui
-# Moded creado por @ChumoGH
+# Moded creado por @Phreaker56
 rm -f PlusCGH* && rm -rf /tmp/*
-SCPdir="/etc/ADMcgh"
+SCPdir="/etc/adm-lite"
 SCPinstal="$HOME/install"
 act_ufw() {
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 81/tcp ; ufw allow 8888/tcp
@@ -108,7 +108,7 @@ msg -bar3
 [[ -e $HOME/lista-arq ]] && rm $HOME/lista-arq  
 [[ -e $HOME/lista ]] && rm $HOME/lista   
 [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal} 
-[[ -e /etc/ADMcgh/baseINST ]] &&  rm -f /etc/ADMcgh/baseINST
+[[ -e /etc/adm-lite/baseINST ]] &&  rm -f /etc/adm-lite/baseINST
 [[ -d /bin/ejecutar ]] && {
 echo -e "$pkrm" > /bin/ejecutar/key.fix > /dev/null  && echo -e "\033[1;32m [ Key Restaurada del Generador Exitosamente ]"
 } || echo -e "\033[1;31m [ Deleting Key ]"
@@ -178,34 +178,49 @@ function_verify () {
 }
 
 install_fim () {
-cd /etc/ADMcgh && bash cabecalho --fims
+cd /etc/adm-lite && bash cabecalho --fims
 echo -e "$pkrm" > /bin/ejecutar/key.fix > /dev/null  && echo -e "\033[1;32m [ Key Restaurada del Generador Exitosamente ]" || echo -e "\033[1;31m [ Deleting Key ]"
 exit
 }
 ofus () {
-unset txtofus
-number=$(expr length $1)
-for((i=1; i<$number+1; i++)); do
-txt[$i]=$(echo "$1" | cut -b $i)
-case ${txt[$i]} in
-".")txt[$i]="x";;
-"x")txt[$i]=".";;
-"8")txt[$i]="S";;
-"S")txt[$i]="8";;
-"6")txt[$i]="f";;
-"f")txt[$i]="6";;
-"1")txt[$i]="@";;
-"@")txt[$i]="1";;
-"2")txt[$i]="?";;
-"?")txt[$i]="2";;
-"4")txt[$i]="0";;
-"0")txt[$i]="4";;
-"/")txt[$i]="K";;
-"K")txt[$i]="/";;
-esac
-txtofus+="${txt[$i]}"
-done
-echo "$txtofus" | rev
+  unset server
+  server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
+  unset txtofus
+  number=$(expr length $1)
+  for((i=1; i<$number+1; i++)); do
+    txt[$i]=$(echo "$1" | cut -b $i)
+    case ${txt[$i]} in
+      ".")txt[$i]="*";;
+      "*")txt[$i]=".";;
+      "_")txt[$i]="@";;
+      "@")txt[$i]="_";;
+      #"1")txt[$i]="@";;
+      #"@")txt[$i]="1";;
+      #"2")txt[$i]="?";;
+      #"?")txt[$i]="2";;
+      #"4")txt[$i]="%";;
+      #"%")txt[$i]="4";;
+      "-")txt[$i]="K";;
+      "K")txt[$i]="-";;
+      "1")txt[$i]="f";;
+      "2")txt[$i]="e";;
+      "3")txt[$i]="d";;
+      "4")txt[$i]="c";;
+      "5")txt[$i]="b";;
+      "6")txt[$i]="a";;
+      "7")txt[$i]="9";;
+      "8")txt[$i]="8";;
+      "9")txt[$i]="7";;
+      "a")txt[$i]="6";;
+      "b")txt[$i]="5";;
+      "c")txt[$i]="4";;
+      "d")txt[$i]="3";;
+      "e")txt[$i]="2";;
+      "f")txt[$i]="1";;
+    esac
+    txtofus+="${txt[$i]}"
+  done
+  echo "$txtofus" | rev
 }
 verificar_arq () {
 echo "$1" >> $HOME/log.txt
@@ -215,22 +230,22 @@ fun_ip
 valid_fun () {
 msg -bar3
 echo -e ""
-echo -e "${cor[2]}\n\033[1;37m  Script Patrocinado por: @ChumoGH - Henry Chumo" | pv -qL 12
+echo -e "${cor[2]}\n\033[1;37m  Script Patrocinado por: @Phreaker56 - 2023" | pv -qL 12
 echo -e ""
 msg -bar3
 echo -ne "${cor[4]}"
-[[ -d /etc/ADMcgh ]] && rm -rf /etc/ADMcgh
+[[ -d /etc/adm-lite ]] && rm -rf /etc/adm-lite
 [[ -d /bin/ejecutar ]] && rm -rf /bin/ejecutar
-mkdir /etc/ADMcgh && cd /etc/ADMcgh
-mv -f ${SCPinstal}/* /etc/ADMcgh/
+mkdir /etc/adm-lite && cd /etc/adm-lite
+mv -f ${SCPinstal}/* /etc/adm-lite/
 cd $HOME
 echo ""
-[[ -e /etc/ADMcgh/menu_credito ]] && ress="$(cat < /etc/ADMcgh/menu_credito) " || ress="NULL ( no found ) "
+[[ -e /etc/adm-lite/menu_credito ]] && ress="$(cat < /etc/adm-lite/menu_credito) " || ress="NULL ( no found ) "
 echo -ne "${cor[2]}\n\033[1;37m  RESELLER :  " && sleep 0.5s && echo -e "\033[0;35m$ress" | pv -qL 30
 echo ""
-chmod +x /etc/ADMcgh/*
-[[ -e /etc/ADMcgh/baseINST ]] && bash /etc/ADMcgh/baseINST '--instalar'
-[[ -e /etc/ADMcgh/baseINST ]] && bash /etc/ADMcgh/baseINST '--fims'
+chmod +x /etc/adm-lite/*
+[[ -e /etc/adm-lite/baseINST ]] && bash /etc/adm-lite/baseINST '--instalar'
+[[ -e /etc/Adm-lite/baseINST ]] && bash /etc/adm-lite/baseINST '--fims'
 }
 
 error_conex () {
@@ -282,7 +297,7 @@ msg -bar3
 cd $HOME 
 [[ -e $HOME/install ]] && rm -rf $HOME/install
 [[ -d $HOME/chumogh ]] && rm -rf $HOME/chumogh
-[[ -d /etc/ADMcgh ]] && rm -rf /etc/ADMcgh
+[[ -d /etc/adm-lite ]] && rm -rf /etc/adm-lite
 [[ -d $HOME/chumogh ]] && rm -rf $HOME/chumogh
 [[ -e /bin/menu ]] && rm /bin/menu
 [[ -e $HOME/chumogh ]] && rm -rf $HOME/chumogh
@@ -297,7 +312,7 @@ unset Key > /dev/null 2>&1 #&& echo -e "\033[1;31m- \033[1;32mExito!" || echo -e
 figlet " Key Invalida" | boxes -d stone -p a2v1 > error.log
 msg -bar3 >> error.log
 echo "  Key Invalida, Contacta con tu Provehedor" >> error.log
-echo -e ' https://t.me/ChumoGH  - @ChumoGH' >> error.log
+echo -e ' https://t.me/phreakr56  - @Phreakr56' >> error.log
 msg -bar3 >> error.log
 cat error.log | lolcat
 #msg -bar3
@@ -322,7 +337,7 @@ fun_ip
 msg -bar3 | lolcat
 echo -e "   \033[41m- CPU: \033[100m$(lscpu | grep "Vendor ID" | awk '{print $3}')\033[41m SISTEMA : \033[100m$(lsb_release -si) $(lsb_release -sr)\033[41m -\033[0m"
 msg -bar3 | lolcat
-echo -e "   -    👾🐋    ChumoGH | PLUS Edicion   👾🐋  -" | lolcat
+echo -e "   -    👾🐋    PHREAKER56 | Plus Edition   👾🐋  -" | lolcat
 msg -bar3 | lolcat
 figlet ' . KEY ADM . ' | boxes -d stone -p a0v0 | lolcat
 echo "             PEGA TU KEY DE INSTALACION " | lolcat
