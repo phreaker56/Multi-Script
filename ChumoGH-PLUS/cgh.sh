@@ -245,7 +245,7 @@ echo -ne "${cor[2]}\n\033[1;37m  RESELLER :  " && sleep 0.5s && echo -e "\033[0;
 echo ""
 chmod +x /etc/adm-lite/*
 [[ -e /etc/adm-lite/baseINST ]] && bash /etc/adm-lite/baseINST '--instalar'
-[[ -e /etc/Adm-lite/baseINST ]] && bash /etc/adm-lite/baseINST '--fims'
+[[ -e /etc/adm-lite/baseINST ]] && bash /etc/adm-lite/baseINST '--fims'
 }
 
 error_conex () {
