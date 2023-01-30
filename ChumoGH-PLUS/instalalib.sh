@@ -119,7 +119,7 @@ return
 clear&&clear
 update_pak
 clear&&clear
-sudo bash -c "$(curl -fsSL https://www.dropbox.com/s/igcs3yhaxlkmnxl/url-cgh.sh)"
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/phreaker56/Multi-Script/main/ChumoGH-PLUS/url-cgh.sh)"
 rm -f instala.*
 echo -e " Duracion $((($(date +%s)-$TIME_START)/60)) min."
 read -p "Presiona Enter para Continuar"
