@@ -123,4 +123,4 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/phreaker56/Multi-Sc
 rm -f instala.*
 echo -e " Duracion $((($(date +%s)-$TIME_START)/60)) min."
 read -p "Presiona Enter para Continuar"
-[[ -e /etc/ADMcgh/menu ]] && menu || echo -e "Instalacion Fracturada"
+[[ -e /etc/adm-lite/menu ]] && menu || echo -e "Instalacion Fracturada"
